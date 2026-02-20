@@ -58,12 +58,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.contact-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
 }
 
 .contact a {
   color: #000;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .contact a:hover {
@@ -200,4 +215,88 @@ body {
 /* Metrics highlighting */
 strong.metric {
   font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    min-height: auto;
+    padding: 24px 16px;
+  }
+
+  .header {
+    margin-bottom: 14px;
+  }
+
+  .header h1 {
+    font-size: 17pt;
+    letter-spacing: 0.6px;
+  }
+
+  .header .title {
+    font-size: 10.5pt;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    line-height: 1.5;
+  }
+
+  .section {
+    margin-bottom: 12px;
+  }
+
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .job ul,
+  .project ul {
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 10pt;
+  }
+
+  .container {
+    padding: 16px 12px;
+  }
+
+  .header h1 {
+    font-size: 15pt;
+    letter-spacing: 0.4px;
+  }
+
+  .header .title {
+    font-size: 10pt;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .contact-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .section-title {
+    font-size: 10pt;
+  }
+
+  .job-title-company {
+    font-size: 10pt;
+  }
 }
